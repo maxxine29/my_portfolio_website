@@ -1,55 +1,439 @@
+@import url('https://fonts.cdnfonts.com/css/star-wars');
+
+* {
+    font-family: 'Star Wars', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    border: none;
+    outline: none;
+}
+
+:root {
+    --bg-color: #1f242d;
+    --second-bg-color: #323946;
+    --text-color: #fff;
+    --main-color: #0ef;
+}
+
+html {
+    font-size: 62.5%;
+    overflow-x: hidden;
+}
+
 body {
-  font-family: Arial, sans-serif;
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+    background: var(--bg-color);
+    color: var(--text-color);
+
 }
 
 header {
-  background-color: #333;
-  color: white;
-  padding: 10px 0;
-  text-align: center;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  padding: 1rem;
+  z-index: 1000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
-nav ul {
-  list-style: none;
-  padding: 0;
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 2rem 9%;
+    background-color: var(--bg-color);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000;
 }
 
-nav ul li {
-  display: inline;
-  margin: 0 15px;
+.logo {
+    font-size: 2.5rem;
+    color: var(--text-color);
+    font-weight: 600;
+    cursor: default;
 }
 
-nav ul li a {
-  color: white;
-  text-decoration: none;
+.navbar a {
+    font-size: 1.7rem;
+    margin-left: 4rem;
+    color: var(--text-color);
+    transition: .3s;
 }
 
-section {
-  padding: 50px;
-  text-align: center;
-}
-
-#home {
-  background-color: #f4f4f4;
-}
-
-#about, #projects, #contact {
-  background-color: #e2e2e2;
-}
-
-.project {
-  margin: 20px 0;
+.navbar a:hover,
+.navbar a.active {
+    color: var(--main-color);
 }
 
 footer {
-  background-color: #333;
-  color: white;
-  text-align: center;
-  padding: 10px 0;
-  position: fixed;
-  width: 100%;
-  bottom: 0;
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}
+
+/* Star Wars Crawl Section Styling 
+.star-wars-crawl {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    perspective: 400px;
+    overflow: hidden;
+    transform-style: preserve-3d;
+    background: url('https://i.imgur.com/3xH3JmS.jpg') repeat #000;
+    background: black;
+    color: yellow;
+    font-family: 'Star Wars', sans-serif;
+}
+
+.star-wars-crawl .crawl {
+    position: absolute;
+    top: 100%;
+    width: 100%;
+    transform-style: preserve-3d;
+    opacity: 0; /* Initially hide the crawl 
+    transform: rotateX(25deg) translateY(-100%) translateZ(-400px);
+    transform-origin: bottom center;
+    animation: crawl 60s linear infinite;
+    text-align: center;
+    opacity: 0; 
+    pointer-events: none; 
+    transition: opacity 1s ease-in-out; 
+   
+    
+
+.star-wars-crawl.active .crawl {
+    opacity: 1;
+    pointer-events: auto; 
+}
+*/
+
+/* home section styling */
+.home {
+    display: flex;
+    justify-content: center;
+    
+    align-items: center;
+    background: url("images/download (1).jpeg") no-repeat center;
+    height: 100vh;
+    color: #fff;
+    min-height: 500px;
+    background-size: cover;
+    background-attachment: fixed;
+    font-family: 'Ubuntu', sans-serif;
+}
+
+.home .max-width {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.home .home-content .text-1 {
+    font-size: 2.7rem;
+}
+
+.home .home-content .text-2 {
+    font-size: 7.5rem;
+    font-weight: 600;
+    margin-left: -3px;
+}
+
+.home .home-content .text-3 {
+    font-size: 4rem;
+    margin: 5px 0;
+}
+
+.home .home-content .text-3 span {
+    color: #0ef;
+    font-weight: 500;
+}
+
+.home .home-content a {
+    display: inline-block;
+    background: #0ef;
+    color: #fff;
+    font-size: 1rem;
+    padding: 1em 0;
+    margin-top: 20px;
+    font-weight: 400;
+    border-radius: 6px;
+    border: 2px solid #0ef;
+    transition: all 0.3s ease;
+}
+
+.home .home-content a:hover {
+    color: #0ef;
+    background: none;
+}
+
+/* about section styling */
+.about {
+    padding: 100px 0;
+    background: var(--second-bg-color);
+}
+
+.about .max-width {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.about .title {
+    font-size: 3.5rem;
+    font-weight: 600;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.about .about-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.about .about-content .column {
+    flex: 1;
+    padding: 2rem;
+}
+
+.about .about-content .left img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.about .about-content .right .text {
+    font-size: 2.5rem;
+    font-weight: 600;
+}
+
+.about .about-content .right p {
+    margin: 1.5rem 0;
+    line-height: 1.8;
+}
+
+.about .about-content .right a {
+    background: var(--main-color);
+    color: #fff;
+    padding: 1rem 2rem;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+}
+
+.about .about-content .right a:hover {
+    background: #fff;
+    color: var(--main-color);
+}
+
+/* services section styling */
+.services {
+    padding: 100px 0;
+}
+
+.services .max-width {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.services .title {
+    font-size: 3.5rem;
+    font-weight: 600;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.services .serv-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.services .serv-content .card {
+    flex: 1;
+    margin: 1rem;
+    padding: 2rem;
+    background: var(--second-bg-color);
+    border-radius: 10px;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.services .serv-content .card:hover {
+    transform: translateY(-10px);
+}
+
+.services .serv-content .card .box i {
+    font-size: 5rem;
+    color: var(--main-color);
+}
+
+.services .serv-content .card .box .text {
+    font-size: 2rem;
+    font-weight: 600;
+    margin: 1.5rem 0;
+}
+
+.services .serv-content .card .box p {
+    line-height: 1.8;
+}
+
+/* skills section styling */
+.skills {
+    padding: 100px 0;
+    background: var(--second-bg-color);
+}
+
+.skills .max-width {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.skills .title {
+    font-size: 3.5rem;
+    font-weight: 600;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.skills .skills-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.skills .skills-content .column {
+    flex: 1;
+    padding: 2rem;
+}
+
+.skills .skills-content .left .text {
+    font-size: 2.5rem;
+    font-weight: 600;
+}
+
+.skills .skills-content .left p {
+    margin: 1.5rem 0;
+    line-height: 1.8;
+}
+
+.skills .skills-content .left a {
+    background: var(--main-color);
+    color: #fff;
+    padding: 1rem 2rem;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+}
+
+.skills .skills-content .left a:hover {
+    background: #fff;
+    color: var(--main-color);
+}
+
+.skills .skills-content .right .bars {
+    margin-bottom: 1.5rem;
+}
+
+.skills .skills-content .right .info {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: .5rem;
+}
+
+.skills .skills-content .right .info span {
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+.skills .skills-content .right .line {
+    height: .5rem;
+    background: #ddd;
+    border-radius: 5px;
+    position: relative;
+}
+
+.skills .skills-content .right .line.html::after {
+    content: '';
+    position: absolute;
+    height: 100%;
+    width: 90%;
+    background: var(--main-color);
+    border-radius: 5px;
+}
+
+.skills .skills-content .right .line.css::after {
+    content: '';
+    position: absolute;
+    height: 100%;
+    width: 80%;
+    background: var(--main-color);
+    border-radius: 5px;
+}
+
+.skills .skills-content .right .line.js::after {
+    content: '';
+    position: absolute;
+    height: 100%;
+    width: 70%;
+    background: var(--main-color);
+    border-radius: 5px;
+}
+
+.skills .skills-content .right .line.mysql::after {
+    content: '';
+    position: absolute;
+    height: 100%;
+    width: 65%;
+    background: var(--main-color);
+    border-radius: 5px;
+}
+
+/* contact section styling */
+.contact {
+    padding: 100px 0;
+}
+
+.contact .max-width {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.contact .title {
+    font-size: 3.5rem;
+    font-weight: 600;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.contact .contact-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.contact .contact-content .column {
+    flex: 1;
 }
